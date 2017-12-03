@@ -16,9 +16,11 @@ var express     = require("express"),
 var campgroundRoutes = require("./routes/campgrounds"),  
     commentRoutes    = require("./routes/comments"),   
     authRoutes       = require("./routes/index");
-    
-// mongoose.connect("mongodb://localhost/yelp_camp_v12", {useMongoClient: true});
-mongoose.connect("mongodb://dtsiridakis:dtsiridakis@ds129386.mlab.com:29386/yelpcamp");
+
+var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12"
+mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));// __dirname is showing the path that the app is running!!!!
 app.use(methodOverride("_method"));
