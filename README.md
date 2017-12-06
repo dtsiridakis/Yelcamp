@@ -1,4 +1,4 @@
-#YelpCamp deployed application
+# YelpCamp deployed application
 - Here is my first application via nodeJS
 
 # Databases
